@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="mangerscontroller.js"></script>
+    <link rel="shortcut icon" href="" />
+    <link href="myapp.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-app="mangers" ng-controller="mangerscontroller" ng-cloak>
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th colspan="7">
+                        <a class="waves-effect waves-light btn" ng-click="add()"><i class="material-icons left">add</i>Add New User</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Email Id</th>
+                    <th>Phone Number</th>
+                    <th>No.of Assignees</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="e in emp track by $index">
+                    <td>
+                        <img class="gridpic" src="images/{{e.img}}"  /></td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.phoneno}}</td>
+                    <td><span ng-bind="getcountofassignees(e.id)"></span></td>
+                    <td> <i class="material-icons pointer" ng-click="edit(e.id)">create</i> </td>
+                    <td><i class="material-icons pointer" ng-click="delete(e.id)">delete</i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="modal1" class="modal left-sheet modelcls">
+            <div class="modal-content">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">                            
+                            <div class="col s6">
+                                <label  class="required active"> Name</label>
+                                <label ng-show="namereq" class="requiredmsg">{{namereqmsg}}</label>
+                                <input id="first_name" ng-model="first_name" type="text" />                                
+                            </div>
+                            
+                            <div class=" col s6">
+                                 <label class="required active">Phone Number</label>
+                                <label ng-show="phonenumreq" class="requiredmsg">{{phonenummsg}}</label>
+                                <input id="phoneno" type="text" ng-model="phoneno"  />                               
+                            </div>
+                        </div> 
+                        <div class="row">                             
+                            <div class=" col s6">
+                                <label class="required active">Email</label>
+                                <label ng-show="emailreq" class="requiredmsg">{{emailreqmsg}}</label>
+                                <input id="email" type="text" ng-model="email"  />                                
+                            </div> 
+                             <div class=" col s3" >
+                                 <label for="emps"  class=" active">Select Image</label>
+                               <select ng-model="imageselection" ng-change="imagechange()" class="browser-default">
+                                   <option value="">Default</option>
+                                   <option value="1">image1</option>
+                                   <option value="2">image2</option>
+                                   <option value="3">image3</option>
+                                   <option value="4">image4</option>
+                                   <option value="5">image5</option>
+                               </select>                                 
+                            </div>  
+                             <div class=" col s3" >
+                                 <label for="emps"  class=" active">Preview</label>
+                             <img src="{{imagsrc}}" class="Photo" />   
+                                 </div>                     
+                        </div>
+                        <div class="row">                           
+                            <div class="input-field col s12">
+                                 <label for="emps"  class=" active">assignees</label>
+                                <multi-select id="emps" totaldata="AllUsersData" selecteddata="selectedusersIds" class="users-multi-select"></multi-select>                                
+                            </div>
+                        </div> 
+                                                
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">                
+                <a class="waves-effect waves-light btn" ng-click="cancel()">Cancel</a>                
+                <a ng-show="savebutton=='Save'" class="waves-effect waves-light btn" ng-click="reset()">Reset</a>
+                <a class="waves-effect waves-light btn" ng-click="save()">{{savebutton}}</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

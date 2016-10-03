@@ -1,0 +1,148 @@
+﻿.gridpic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+}
+.pointer {
+    cursor:pointer;
+}
+
+.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0 12px 0 38px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+}
+.selected-users {
+    max-height: 80px;
+    overflow-y: auto;
+}
+.autocompelate .selected {
+    color: #948e8e;
+    background-color: #e1e5ec;
+    margin-bottom: 2px;
+}
+.autocompelate .selected {
+    color: #948e8e;
+    background-color: #e1e5ec;
+    margin-bottom: 2px;
+}
+
+.autocompelate li {
+    padding: 5px;
+    cursor: pointer;
+}
+.chip i.material-icons {
+    cursor: pointer;
+    float: right;
+    font-size: 16px;
+    line-height: 32px;
+    padding-left: 8px;
+}
+.auto-compelate {
+    float: left;
+    margin: 0 7px 5px 0;
+    position: relative;
+}
+
+.chip img {
+    float: left;
+    margin: 0 8px 0 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    position: absolute;
+}
+img {
+    line-height: 20px;
+    left: 0;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    background-color: transparent;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    outline: none;
+    height: 34px;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    box-shadow: none;
+    box-sizing: inherit;
+    transition: all 0.3s;
+}
+.input-field label {
+    color: #636262;
+    font-size: .8rem;
+    cursor: text;
+    transition: .2s ease-out;
+}
+label {
+    font-size: 0.8rem;
+}
+.required:after {
+    content: ' *';
+    font-size: 13px;
+    vertical-align: top;
+    color: #dd2c00;
+}
+.autocompelate {
+    border: 1px solid #ded8d8;
+    position: absolute;
+    z-index: 9999;
+    background: #fff;
+    top: 30px;
+    min-width: 300px;
+}.Photo {
+   height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #c1c1c1;
+    float: right;
+    
+    margin-top: 17px;
+    margin-right: 14px;
+}
+
+   .autocompelate {    
+    border: 1px solid #ded8d8;
+    position:absolute;
+    width:100%;
+}
+    .autocompelate li {
+    padding: 5px;
+    cursor: pointer;
+    
+}
+    .autocompelate li:hover {
+    background: #ccc;
+}
+    .container {
+    height:100px;
+    border-color:black;
+    overflow:auto;
+}
+li {
+    outline: none;
+    cursor: default;
+}
+.activey{
+    background-color:#ccc;    
+}
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    float: right;
+    margin: 6px 3px;
+}
+.requiredmsg {
+    color:red;
+}
+.modelcls {
+    max-height:90% !important
+}
